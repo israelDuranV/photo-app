@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-i18n">
+  <template>
+    <style>
+      h1{
+        color: black;
+        text-align: center;
+      }
+    </style>
+        <h1>Cambiar idioma</h1>
+        <style include="common-styles"></style>
+
+    <div class="lang">
+      <span title="english">🇬🇧 EN</span>
+      <paper-toggle-button on-change="_toggle" id="switch"></paper-toggle-button>
+      <span title="french">FR 🇫🇷</span>
+    </div>
+
+    <h4>This demo's resources are loaded statically, not from an external file.</h4>
+
+    <div class="snippet">
+      <div class="demo">
+        <div>{{localize('greeting')}}</div>
+      </div>
+      <div class="code-container">
+        <code>localize('greeting')</code>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    (function I18nAppDefinition(customElements) {
+      'use strict';
+      class myI18nApp extends Polymer.Element {
+        static get is() {
+          return 'my-i18n';
+        }
+        static get properties(){
+          return {
+            view : {
+              type: String,
+            }
+          }
+        }
+      }
+
+      customElements.define(myI18nApp.is, myI18nApp);
+    })(window.customElements)
+  </script>
+</dom-module>

@@ -1,0 +1,68 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../my-upload/my-upload.html">
+<link rel="import" href="../my-gallery/my-gallery.html">
+
+<dom-module id="my-photos">
+  <template>
+    <style>
+      app-toolbar {
+        background-color: #1E88E5;
+      }
+      .btn{
+        background-color: rgba(47,165,29,1);
+        color: white;
+        padding: 10px;
+        margin:5px;
+      }
+      paper-card{
+        width: 98%;
+        padding: 2%;
+        margin: 1%;
+		text-align: center;
+      }
+      paper-card.upload{
+        max-width: 480px;
+        background-color: rgba(227,179,213,1);
+
+      }
+      paper-card.gallery{
+        background-color: rgba(247,220,111,0.8);
+      }
+    </style>
+<paper-card class="upload">
+        <my-upload></my-upload>
+</paper-card>
+<paper-card class="gallery">
+  <my-gallery urls="{{urls}}"></my-gallery>
+</paper-card>
+  </template>
+
+  <script>
+    (function phothosAppDefinition(customElements) {
+      'use strict';
+      class myConfigApp extends Polymer.Element {
+        static get is() {
+          return 'my-photos';
+        }
+        static get properties(){
+          return {
+            view : {
+              type: String,
+            },
+            urls : {
+              type: Array,
+            }
+          }
+        }
+      }customElements.define(myConfigApp.is, myConfigApp);
+    })(window.customElements)
+  </script>
+</dom-module>

@@ -1,0 +1,175 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'PolymerElements/paper-toggle-button' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData PolymerElements/paper-toggle-button
+8 silly fetchOtherPackageData PolymerElements/paper-toggle-button
+9 silly cache add args [ 'PolymerElements/paper-toggle-button', null ]
+10 verbose cache add spec PolymerElements/paper-toggle-button
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'PolymerElements/paper-toggle-button',
+11 silly cache add   scope: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'PolymerElements/paper-toggle-button',
+11 silly cache add   spec: 'github:polymerelements/paper-toggle-button',
+11 silly cache add   type: 'hosted',
+11 silly cache add   hosted:
+11 silly cache add    { type: 'github',
+11 silly cache add      ssh: 'git@github.com:polymerelements/paper-toggle-button.git',
+11 silly cache add      sshUrl: 'git+ssh://git@github.com/polymerelements/paper-toggle-button.git',
+11 silly cache add      httpsUrl: 'git+https://github.com/polymerelements/paper-toggle-button.git',
+11 silly cache add      gitUrl: 'git://github.com/polymerelements/paper-toggle-button.git',
+11 silly cache add      shortcut: 'github:polymerelements/paper-toggle-button',
+11 silly cache add      directUrl: 'https://raw.githubusercontent.com/polymerelements/paper-toggle-button/master/package.json' } }
+12 verbose addRemoteGit caching PolymerElements/paper-toggle-button
+13 verbose addRemoteGit polymerelements/paper-toggle-button is a repository hosted by github
+14 silly tryGitProto attempting to clone git://github.com/polymerelements/paper-toggle-button.git
+15 silly tryClone cloning polymerelements/paper-toggle-button via git://github.com/polymerelements/paper-toggle-button.git
+16 verbose tryClone git-github-com-polymerelements-paper-toggle-button-git-27d59257 not in flight; caching
+17 info git [ 'config', '--get', 'remote.origin.url' ]
+18 silly validateExistingRemote polymerelements/paper-toggle-button remote.origin.url: git://github.com/polymerelements/paper-toggle-button.git
+19 verbose validateExistingRemote polymerelements/paper-toggle-button is updating existing cached remote /home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-27d59257
+20 info git [ 'fetch', '-a', 'origin' ]
+21 verbose updateRemote git fetch -a origin (git://github.com/polymerelements/paper-toggle-button.git)
+22 verbose setPermissions polymerelements/paper-toggle-button set permissions on /home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-27d59257
+23 verbose resolveHead polymerelements/paper-toggle-button original treeish: master
+24 info git [ 'rev-list', '-n1', 'master' ]
+25 silly resolveHead polymerelements/paper-toggle-button resolved treeish: f39aa069dbf31d69675cfb2542f8999a3859a965
+26 verbose resolveHead polymerelements/paper-toggle-button resolved Git URL: git://github.com/polymerelements/paper-toggle-button.git#f39aa069dbf31d69675cfb2542f8999a3859a965
+27 silly resolveHead Git working directory: /tmp/npm-10579-a38c73db/git-cache-2b8fce05/f39aa069dbf31d69675cfb2542f8999a3859a965
+28 info git [ 'clone',
+28 info git   '/home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-27d59257',
+28 info git   '/tmp/npm-10579-a38c73db/git-cache-2b8fce05/f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+29 verbose cloneResolved polymerelements/paper-toggle-button clone Clonando en '/tmp/npm-10579-a38c73db/git-cache-2b8fce05/f39aa069dbf31d69675cfb2542f8999a3859a965'...
+29 verbose cloneResolved hecho.
+30 info git [ 'checkout', 'f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+31 verbose checkoutTreeish polymerelements/paper-toggle-button checkout Nota: actualizando el árbol de trabajo 'f39aa069dbf31d69675cfb2542f8999a3859a965'.
+31 verbose checkoutTreeish
+31 verbose checkoutTreeish Te encuentras en estado 'detached HEAD'. Puedes revisar por aquí, hacer
+31 verbose checkoutTreeish cambios experimentales y confirmarlos, y puedes descartar cualquier
+31 verbose checkoutTreeish commit que hayas hecho en este estado sin impactar a tu rama realizando
+31 verbose checkoutTreeish otro checkout.
+31 verbose checkoutTreeish
+31 verbose checkoutTreeish Si quieres crear una nueva rama para mantener los commits que has creado,
+31 verbose checkoutTreeish puedes hacerlo (ahora o después) usando -b con el comando checkout. Ejemplo:
+31 verbose checkoutTreeish
+31 verbose checkoutTreeish   git checkout -b <nombre-de-nueva-rama>
+31 verbose checkoutTreeish
+31 verbose checkoutTreeish HEAD está ahora en f39aa06 Automatic cleanup! (#136)
+32 error addLocal Could not install /tmp/npm-10579-a38c73db/git-cache-2b8fce05/f39aa069dbf31d69675cfb2542f8999a3859a965
+33 silly tryHTTPS attempting to clone git+https://github.com/polymerelements/paper-toggle-button.git
+34 silly tryClone cloning polymerelements/paper-toggle-button via git+https://github.com/polymerelements/paper-toggle-button.git
+35 verbose tryClone git-https-github-com-polymerelements-paper-toggle-button-git-de2b1be0 not in flight; caching
+36 info git [ 'config', '--get', 'remote.origin.url' ]
+37 silly validateExistingRemote polymerelements/paper-toggle-button remote.origin.url: https://github.com/polymerelements/paper-toggle-button.git
+38 verbose validateExistingRemote polymerelements/paper-toggle-button is updating existing cached remote /home/israel/.npm/_git-remotes/git-https-github-com-polymerelements-paper-toggle-button-git-de2b1be0
+39 info git [ 'fetch', '-a', 'origin' ]
+40 verbose updateRemote git fetch -a origin (https://github.com/polymerelements/paper-toggle-button.git)
+41 verbose setPermissions polymerelements/paper-toggle-button set permissions on /home/israel/.npm/_git-remotes/git-https-github-com-polymerelements-paper-toggle-button-git-de2b1be0
+42 verbose resolveHead polymerelements/paper-toggle-button original treeish: master
+43 info git [ 'rev-list', '-n1', 'master' ]
+44 silly resolveHead polymerelements/paper-toggle-button resolved treeish: f39aa069dbf31d69675cfb2542f8999a3859a965
+45 verbose resolveHead polymerelements/paper-toggle-button resolved Git URL: git+https://github.com/polymerelements/paper-toggle-button.git#f39aa069dbf31d69675cfb2542f8999a3859a965
+46 silly resolveHead Git working directory: /tmp/npm-10579-a38c73db/git-cache-98706bc9/f39aa069dbf31d69675cfb2542f8999a3859a965
+47 info git [ 'clone',
+47 info git   '/home/israel/.npm/_git-remotes/git-https-github-com-polymerelements-paper-toggle-button-git-de2b1be0',
+47 info git   '/tmp/npm-10579-a38c73db/git-cache-98706bc9/f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+48 verbose cloneResolved polymerelements/paper-toggle-button clone Clonando en '/tmp/npm-10579-a38c73db/git-cache-98706bc9/f39aa069dbf31d69675cfb2542f8999a3859a965'...
+48 verbose cloneResolved hecho.
+49 info git [ 'checkout', 'f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+50 verbose checkoutTreeish polymerelements/paper-toggle-button checkout Nota: actualizando el árbol de trabajo 'f39aa069dbf31d69675cfb2542f8999a3859a965'.
+50 verbose checkoutTreeish
+50 verbose checkoutTreeish Te encuentras en estado 'detached HEAD'. Puedes revisar por aquí, hacer
+50 verbose checkoutTreeish cambios experimentales y confirmarlos, y puedes descartar cualquier
+50 verbose checkoutTreeish commit que hayas hecho en este estado sin impactar a tu rama realizando
+50 verbose checkoutTreeish otro checkout.
+50 verbose checkoutTreeish
+50 verbose checkoutTreeish Si quieres crear una nueva rama para mantener los commits que has creado,
+50 verbose checkoutTreeish puedes hacerlo (ahora o después) usando -b con el comando checkout. Ejemplo:
+50 verbose checkoutTreeish
+50 verbose checkoutTreeish   git checkout -b <nombre-de-nueva-rama>
+50 verbose checkoutTreeish
+50 verbose checkoutTreeish HEAD está ahora en f39aa06 Automatic cleanup! (#136)
+51 error addLocal Could not install /tmp/npm-10579-a38c73db/git-cache-98706bc9/f39aa069dbf31d69675cfb2542f8999a3859a965
+52 silly trySSH attempting to clone git@github.com:polymerelements/paper-toggle-button.git
+53 silly tryClone cloning polymerelements/paper-toggle-button via git@github.com:polymerelements/paper-toggle-button.git
+54 verbose tryClone git-github-com-polymerelements-paper-toggle-button-git-8e7e34b0 not in flight; caching
+55 info git [ 'config', '--get', 'remote.origin.url' ]
+56 silly validateExistingRemote polymerelements/paper-toggle-button remote.origin.url: git@github.com:polymerelements/paper-toggle-button.git
+57 verbose validateExistingRemote polymerelements/paper-toggle-button is updating existing cached remote /home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-8e7e34b0
+58 info git [ 'fetch', '-a', 'origin' ]
+59 verbose updateRemote git fetch -a origin (git@github.com:polymerelements/paper-toggle-button.git)
+60 verbose setPermissions polymerelements/paper-toggle-button set permissions on /home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-8e7e34b0
+61 verbose resolveHead polymerelements/paper-toggle-button original treeish: master
+62 info git [ 'rev-list', '-n1', 'master' ]
+63 silly resolveHead polymerelements/paper-toggle-button resolved treeish: f39aa069dbf31d69675cfb2542f8999a3859a965
+64 verbose resolveHead polymerelements/paper-toggle-button resolved Git URL: git+ssh://git@github.com/polymerelements/paper-toggle-button.git#f39aa069dbf31d69675cfb2542f8999a3859a965
+65 silly resolveHead Git working directory: /tmp/npm-10579-a38c73db/git-cache-3ff3f36e/f39aa069dbf31d69675cfb2542f8999a3859a965
+66 info git [ 'clone',
+66 info git   '/home/israel/.npm/_git-remotes/git-github-com-polymerelements-paper-toggle-button-git-8e7e34b0',
+66 info git   '/tmp/npm-10579-a38c73db/git-cache-3ff3f36e/f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+67 verbose cloneResolved polymerelements/paper-toggle-button clone Clonando en '/tmp/npm-10579-a38c73db/git-cache-3ff3f36e/f39aa069dbf31d69675cfb2542f8999a3859a965'...
+67 verbose cloneResolved hecho.
+68 info git [ 'checkout', 'f39aa069dbf31d69675cfb2542f8999a3859a965' ]
+69 verbose checkoutTreeish polymerelements/paper-toggle-button checkout Nota: actualizando el árbol de trabajo 'f39aa069dbf31d69675cfb2542f8999a3859a965'.
+69 verbose checkoutTreeish
+69 verbose checkoutTreeish Te encuentras en estado 'detached HEAD'. Puedes revisar por aquí, hacer
+69 verbose checkoutTreeish cambios experimentales y confirmarlos, y puedes descartar cualquier
+69 verbose checkoutTreeish commit que hayas hecho en este estado sin impactar a tu rama realizando
+69 verbose checkoutTreeish otro checkout.
+69 verbose checkoutTreeish
+69 verbose checkoutTreeish Si quieres crear una nueva rama para mantener los commits que has creado,
+69 verbose checkoutTreeish puedes hacerlo (ahora o después) usando -b con el comando checkout. Ejemplo:
+69 verbose checkoutTreeish
+69 verbose checkoutTreeish   git checkout -b <nombre-de-nueva-rama>
+69 verbose checkoutTreeish
+69 verbose checkoutTreeish HEAD está ahora en f39aa06 Automatic cleanup! (#136)
+70 error addLocal Could not install /tmp/npm-10579-a38c73db/git-cache-3ff3f36e/f39aa069dbf31d69675cfb2542f8999a3859a965
+71 silly fetchPackageMetaData Error: No version provided in package.json
+71 silly fetchPackageMetaData     at /usr/share/npm/lib/cache/add-local.js:73:17
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/read-package-json/read-json.js:345:5
+71 silly fetchPackageMetaData     at checkBinReferences_ (/usr/share/npm/node_modules/read-package-json/read-json.js:309:45)
+71 silly fetchPackageMetaData     at final (/usr/share/npm/node_modules/read-package-json/read-json.js:343:3)
+71 silly fetchPackageMetaData     at then (/usr/share/npm/node_modules/read-package-json/read-json.js:113:5)
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/read-package-json/read-json.js:232:12
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+71 silly fetchPackageMetaData     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+71 silly fetchPackageMetaData  error for PolymerElements/paper-toggle-button Error: No version provided in package.json
+71 silly fetchPackageMetaData     at /usr/share/npm/lib/cache/add-local.js:73:17
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/read-package-json/read-json.js:345:5
+71 silly fetchPackageMetaData     at checkBinReferences_ (/usr/share/npm/node_modules/read-package-json/read-json.js:309:45)
+71 silly fetchPackageMetaData     at final (/usr/share/npm/node_modules/read-package-json/read-json.js:343:3)
+71 silly fetchPackageMetaData     at then (/usr/share/npm/node_modules/read-package-json/read-json.js:113:5)
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/read-package-json/read-json.js:232:12
+71 silly fetchPackageMetaData     at /usr/share/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+71 silly fetchPackageMetaData     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+72 silly rollbackFailedOptional Starting
+73 silly rollbackFailedOptional Finishing
+74 silly runTopLevelLifecycles Starting
+75 silly runTopLevelLifecycles Finishing
+76 silly install printInstalled
+77 verbose stack Error: No version provided in package.json
+77 verbose stack     at /usr/share/npm/lib/cache/add-local.js:73:17
+77 verbose stack     at /usr/share/npm/node_modules/read-package-json/read-json.js:345:5
+77 verbose stack     at checkBinReferences_ (/usr/share/npm/node_modules/read-package-json/read-json.js:309:45)
+77 verbose stack     at final (/usr/share/npm/node_modules/read-package-json/read-json.js:343:3)
+77 verbose stack     at then (/usr/share/npm/node_modules/read-package-json/read-json.js:113:5)
+77 verbose stack     at /usr/share/npm/node_modules/read-package-json/read-json.js:232:12
+77 verbose stack     at /usr/share/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+77 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+78 verbose cwd /home/israel/Escritorio/server/photo-clone.firebaseapp.com
+79 error Linux 4.15.0-23-generic
+80 error argv "/usr/bin/node" "/usr/bin/npm" "install" "--save" "PolymerElements/paper-toggle-button"
+81 error node v8.10.0
+82 error npm  v3.5.2
+83 error No version provided in package.json
+84 error If you need help, you may report this error at:
+84 error     <https://github.com/npm/npm/issues>
+85 verbose exit [ 1, true ]

@@ -1,0 +1,25 @@
+<link rel="import" href="../../bower_components/polymer-redux/polymer-redux.html">
+
+<script>
+  const initialState = {
+    gallerys: []
+  }
+
+  function contacts(state = initialState, action) {
+    switch (action.type) {
+      case 'ADD_IMAGE': {
+        const images = state.gallerys.splice(0);
+        images.push(action.data);
+        return Object.assign({}, state, {
+          gallerys
+        });
+      }
+      default: {
+        return state;
+      }
+    }
+  }
+
+  const store = Redux.createStore(contacts);
+  const ReduxMixin = PolymerRedux(store);
+</script>

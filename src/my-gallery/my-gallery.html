@@ -1,0 +1,101 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
+<dom-module id="my-gallery">
+  <template>
+    <style>
+      app-toolbar {
+        background-color: #1E88E5;
+      }
+      paper-card{
+        width: 100%;
+        vertical-align: top;
+      }
+      paper-card.white {
+        --paper-card-header-color: #fff;
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+      }
+      iron-icon.star {
+      --iron-icon-width: 16px;
+      --iron-icon-height: 16px;
+      color: var(--paper-amber-500);
+      }
+      .text-light { color: var(--paper-grey-600); }
+    </style>
+    <template is="dom-repeat" items="{{urls}}">
+	<template is="dom-if" if="{{_hasUrl(item.url)}}">
+        <paper-card class="white" style="margin-bottom:8px;">
+		<img src="{{item.url}}" width="100%" height="100"/>
+          <div class="image-rating">
+            <iron-icon class="star" icon="star"></iron-icon>
+            <iron-icon class="star" icon="star"></iron-icon>
+            <iron-icon class="star" icon="star"></iron-icon>
+            <iron-icon class="" icon="star"></iron-icon>
+            <iron-icon class="" icon="star"></iron-icon>
+          </div>
+          <div class="card-actions">
+            <paper-icon-button icon="favorite"></paper-icon-button>
+            <paper-icon-button icon="bookmark"></paper-icon-button>
+            <paper-icon-button icon="social:share"></paper-icon-button>
+          </div>
+        </paper-card>
+		</template>
+    </template>
+  </template>
+
+  <script>
+    (function galleryAppDefinition(customElements) {
+      'use strict';
+      class myGalleryApp  extends Polymer.Element {
+        static get is() {
+          return 'my-gallery';
+        }
+        static get properties(){
+          return {
+            view : {
+              type: String,
+            },
+            urls : {
+              type: Array,
+            }
+          }
+        }
+        constructor(){
+          super();
+          const user = firebase.auth().currentUser;
+          var self = this;
+          firebase.auth().onAuthStateChanged(function(user) {
+             if (user) {
+                 const dbRefObject = firebase.database().ref().child('Posts');
+                 dbRefObject.on('value', (snap) =>{
+                     self.urls = self.snapshotToArray(snap);
+				   });
+                }
+           });
+        }
+        snapshotToArray(snapshot){
+            let returnArr = [];
+            snapshot.forEach(childSnapshot => {
+                let item = childSnapshot.val();
+                item.key = childSnapshot.key;
+                returnArr.push(item);
+            });
+			returnArr.reverse();
+            return returnArr;
+        };
+		_hasUrl(url){
+			if(typeof(url) != 'undefined'){
+				return true;
+			}
+		}
+
+      }customElements.define(myGalleryApp.is, myGalleryApp);
+    })(window.customElements)
+  </script>
+</dom-module>
