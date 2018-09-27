@@ -17,12 +17,10 @@
 <paper-button on-tap="changeLanguage" id="en">[[localize('English')]]</paper-button>
 <paper-button on-tap="changeLanguage" id="es">[[localize('Spanish')]]</paper-button>
   </template>
-
   <script>
-  (function I18nAppDefinition(customElements) {
+  (function I18nAppDefinition(customElements){
     'use strict';
-      class myI18nApp extends
-        Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
+      class myI18nApp extends  Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
         static get is() {
           return 'my-i18n';
         }
@@ -49,7 +47,16 @@
           this.loadResources(this.resolveUrl(`/locales/${this.language}.json`));
         }
         changeLanguage(e){
-          this._setLanguage(e.target.id);
+          e.preventDefault();
+          let lang = e.target.id;
+          this._setLanguage(lang);
+          this.dispatchEvent(new CustomEvent('change-language', {
+            bubbles: true,
+            composed: true,
+            detail: {
+              lang: e.target.id,
+            }
+          }));
           this.connectedCallback();
         }
       }

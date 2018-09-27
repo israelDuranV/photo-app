@@ -1,8 +1,14 @@
 {
   "en": {
-    "header i18n": "Internacionalitation",
-    "message i18n": "Here you can change language your app",
+    "NombreApp" : "Photo Clone",
+    "header i18n": "Internationalization",
+    "message i18n": "Here you can change your application language",
     "English": "English",
-    "Spanish": "Spanish"
+    "Spanish": "Spanish",
+    "Profile": "Profile",
+    "Photos": "Photos",
+    "Friends": "Friends",
+    "Config": "Configuration",
+    "Admin": "Administration"
     }
 }

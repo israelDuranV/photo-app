@@ -13,7 +13,7 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
-<link rel="import" href="../../bower_components/i18n-behavior/i18n-behavior.html">
+<link rel="import" href="../../bower_components/app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="../my-style/my-style.html">
 <link rel="import" href="../my-admin/my-admin.html">
 <link rel="import" href="../my-profile/my-profile.html">
@@ -167,15 +167,30 @@
     <app-drawer-layout fullbleed>
       <app-drawer slot="drawer">
         <app-toolbar>
-          <div main-title>App Clone</div>
+          <div main-title>[[localize('NombreApp')]]</div>
         </app-toolbar>
         <!--Menu-->
         <app-menu selected="0">
-          <a name="profile" id="profile" class="app-menu-item" href="profile"><iron-icon icon="account-circle"></iron-icon> Profile</a>
-          <a name="photos" id="photos" class="app-menu-item" href="photos"><iron-icon icon="perm-media"></iron-icon> Photos</a>
-          <a name="friends" id="friends" class="app-menu-item" href="friends"><iron-icon icon="face"></iron-icon>Friends</a>
-          <a name="config" id="config" class="app-menu-item" href="config"><iron-icon icon="build"></iron-icon>Configurar</a>
-          <a name="admin" id="admin" class="app-menu-item" href="admin"><iron-icon icon="verified-user"></iron-icon>Administrator</a>
+          <a name="profile" id="profile" class="app-menu-item" href="profile">
+            <iron-icon icon="account-circle"></iron-icon>
+            [[localize('Profile')]]
+          </a>
+          <a name="photos" id="photos" class="app-menu-item" href="photos">
+            <iron-icon icon="perm-media"></iron-icon>
+            [[localize('Photos')]]
+          </a>
+          <a name="friends" id="friends" class="app-menu-item" href="friends">
+            <iron-icon icon="face"></iron-icon>
+            [[localize('Friends')]]
+          </a>
+          <a name="config" id="config" class="app-menu-item" href="config">
+            <iron-icon icon="build"></iron-icon>
+            [[localize('Config')]]
+          </a>
+          <a name="admin" id="admin" class="app-menu-item" href="admin">
+            <iron-icon icon="verified-user"></iron-icon>
+            [[localize('Admin')]]
+          </a>
         </app-menu>
         <!--MENU-->
       </app-drawer>
@@ -185,7 +200,7 @@
           <app-toolbar>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
             <img src="../images/manifest/icon-48x48.png">
-            <div main-title>App-clone</div>
+            <div main-title>[[localize('NombreApp')]]</div>
             <ul class="menubar">
                 <li><a name="github" id="github" target="_blank"><paper-icon-button src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="octocat" title="octocat"></paper-icon-button></a></li>
                 <li><a name="i18n" id="i18n" href="i18n"><paper-icon-button src="../../images/icons/icon-i18n.png"></paper-icon-button></a></li>
@@ -207,7 +222,7 @@
       <my-admin view="admin"></my-admin>
       <my-chat view="chat" me="{{me}}" nameprofile="{{nameprofile}}" photoperfil="{{photoPerfil}}"></my-chat>
       <my-config view="config"></my-config>
-      <my-i18n view="i18n"></my-i18n>
+      <my-i18n view="i18n" on-change-language="changeLanguage"></my-i18n>
       <my-friends view="friends"></my-friends>
     </iron-pages>
 <!--RUTAS -->
@@ -219,7 +234,7 @@
   <script>
     (function myAppDefinition(customElements) {
       'use strict';
-      class myApp extends Polymer.Element {
+      class myApp extends Polymer.mixinBehaviors([Polymer.AppLocalizeBehavior], Polymer.Element) {
         static get is() {
           return 'my-app';
         }
@@ -247,11 +262,19 @@
              },
              me: {
                type: String,
+             },
+             language: {
+               type: String,
+               reflectToAttribute: true,
+               readOnly: true,
+               notify: true,
+               value: 'en'
              }
         }
       }
       constructor(){
           super();
+          this.connectedCallback();
           const config = {
               apiKey: "AIzaSyA0vLGhBotcPoKRkEV10NJFklPLldh7Awo",
               authDomain: "photo-clone.firebaseapp.com",
@@ -275,6 +298,18 @@
                  self.actionOutside = true;
              }
            });
+      }
+      changeLanguage(event){
+        let lang = event.detail.lang;
+        this._setLanguage(lang);
+          this.connectedCallback();
+      }
+      connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('app-localize-resources-loaded', (e) => {
+          console.log(this.resources)
+        });
+        this.loadResources(this.resolveUrl(`/locales/${this.language}.json`));
       }
        loginMeMail(e){
           const txtPassword = this.shadowRoot.querySelector('#txtPassword');

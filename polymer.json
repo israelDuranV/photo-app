@@ -1,18 +1,37 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [
+    "src/my-admin/my-admin.html",
+    "src/my-chat/my-chat.html",
+    "src/my-config/my-config.html",
+    "src/my-friends/my-friends.html",
+    "src/my-gallery/my-gallery.html",
+    "src/my-i18n/my-i18n.html",
+    "src/my-login/my-login.html",
+    "src/my-upload/my-upload.html",
+  ],
+  "sources": [
+    "src/**/*",
+    "data/**/*",
+    "images/**/*"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*"
+  ],
   "lint": {
-    "rules": [
-      "polymer-2"
-    ]
+    "rules": ["polymer-2-hybrid"]
   },
-"builds": [
-  {
-    "preset": "es5-bundled"
-  },
-  {
-    "preset": "es6-bundled"
-  },
-  {
-    "preset": "es6-unbundled"
-  }
-]
+  "builds": [
+    {
+      "preset": "es5-bundled"
+    },
+    {
+      "preset": "es6-unbundled"
+    },
+    {
+      "preset": "es6-bundled"
+    }
+  ]
 }
